@@ -1,0 +1,3 @@
+include ':contactsprovider'
+include ':app'
+rootProject.name = "ContactsProviderDemo"
