@@ -34,11 +34,11 @@ internal class DeletedContactsGetterImpl @Inject constructor(
                         while (it.moveToNext()) {
                             emitter.onNext(
                                 Contact(
-                                    id = it.getString(it.getColumnIndex(ContactsContract.Contacts._ID)),
+                                    id = it.getString(it.getColumnIndex(ContactsContract.DeletedContacts.CONTACT_ID)),
                                     name = "",
                                     lastUpdateTimeStamp = it.getLong(
                                         it.getColumnIndex(
-                                            ContactsContract.Contacts.CONTACT_LAST_UPDATED_TIMESTAMP
+                                            ContactsContract.DeletedContacts.CONTACT_DELETED_TIMESTAMP
                                         )
                                     )
                                 )

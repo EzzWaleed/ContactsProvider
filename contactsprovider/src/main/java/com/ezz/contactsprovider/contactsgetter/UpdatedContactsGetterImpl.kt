@@ -9,8 +9,9 @@ import com.ezz.contactsprovider.utils.PermissionChecker
 import com.ezz.contactsprovider.utils.ReadContactPermissionNotGranted
 import io.reactivex.rxjava3.core.BackpressureStrategy
 import io.reactivex.rxjava3.core.Flowable
+import javax.inject.Inject
 
-internal class UpdatedContactsGetterImpl(
+internal class UpdatedContactsGetterImpl @Inject constructor(
     private val contentResolver: ContentResolver,
     factory: ContactsSyncPreference.Factory,
     private val permissionChecker: PermissionChecker

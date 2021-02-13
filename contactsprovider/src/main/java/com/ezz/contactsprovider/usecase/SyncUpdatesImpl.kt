@@ -9,11 +9,13 @@ import javax.inject.Named
 
 internal class SyncUpdatesImpl @Inject constructor(
     @Named(ContactsGetterModule.Deleted_KEY) private val deletedContactsGetter: ContactsGetter,
-    @Named(ContactsGetterModule.Deleted_KEY) private val updatedContactsGetter: ContactsGetter,
+    @Named(ContactsGetterModule.Updated_KEY) private val updatedContactsGetter: ContactsGetter,
     private val contactsDao: ContactsDao
 ) :
     SyncUpdates {
     override fun invoke(): Completable = deletedContactsGetter.getContacts().flatMapCompletable {
         contactsDao.delete(it)
-    }.mergeWith(updatedContactsGetter.getContacts().flatMapCompletable { contactsDao.insert(it) })
+    }.mergeWith(updatedContactsGetter.getContacts().flatMapCompletable {
+        contactsDao.insert(it)
+    })
 }

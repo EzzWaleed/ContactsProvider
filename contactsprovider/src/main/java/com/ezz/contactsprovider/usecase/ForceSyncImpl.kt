@@ -12,6 +12,8 @@ internal class ForceSyncImpl @Inject constructor(
     private val dao: ContactsDao
 ) : ForceSync {
     override fun invoke(): Completable = contactsGetter.getContacts().toList().flatMapCompletable {
-        dao.deleteAllExcept(it.map { contact -> contact.toString() }).andThen(dao.insert(it))
+        dao.deleteAllExcept(it.map {
+                contact -> contact.toString()
+        }).andThen(dao.insert(it))
     }
 }
