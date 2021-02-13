@@ -1,4 +1,4 @@
-package com.ezz.contactsprovider
+package com.ezz.contactsprovider.utils
 
 import android.Manifest
 import android.content.Context

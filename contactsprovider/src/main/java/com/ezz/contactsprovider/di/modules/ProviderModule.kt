@@ -12,6 +12,7 @@ private const val SHARED_PREFERENCE_NAME = "contactsSharedPreference"
 
 @Module(includes = [PreferenceModule::class, ContactsGetterModule::class, DatabaseModule::class, UseCaseModule::class])
 internal class ProviderModule {
+
     @Provides
     fun providesSharedPreference(@AppContext context: Context): SharedPreferences =
         context.getSharedPreferences(SHARED_PREFERENCE_NAME, MODE_PRIVATE)

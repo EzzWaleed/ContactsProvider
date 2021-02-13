@@ -3,11 +3,11 @@ package com.ezz.contactsprovider
 import android.content.ContentResolver
 import android.content.Context
 import android.provider.ContactsContract
-import com.ezz.contactsprovider.di.AppContext
 import com.ezz.contactsprovider.di.ComponentWrapper
 import com.ezz.contactsprovider.entities.Contact
 import com.ezz.contactsprovider.observer.ContactObserver
 import com.ezz.contactsprovider.usecase.GetContacts
+import com.ezz.contactsprovider.utils.PermissionChecker
 import io.reactivex.rxjava3.core.Flowable
 import javax.inject.Inject
 
@@ -22,8 +22,7 @@ class ContactsProvider {
     internal lateinit var contentResolver: ContentResolver
 
     @Inject
-    @AppContext
-    internal lateinit var context: Context
+    internal lateinit var permissionChecker: PermissionChecker
 
     init {
         ComponentWrapper.instance.inject(this)
@@ -32,7 +31,7 @@ class ContactsProvider {
     fun fetchContacts(): Flowable<List<Contact>> = getContacts()
 
     fun subscribeToContactsUpdate() {
-        if (context.isReadContactsPermitted()){
+        if (permissionChecker.isContactsReadPermissionGranted()) {
             contentResolver.registerContentObserver(
                 ContactsContract.Contacts.CONTENT_URI,
                 true,
