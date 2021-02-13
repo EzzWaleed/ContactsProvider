@@ -10,7 +10,7 @@ import dagger.Provides
 
 private const val SHARED_PREFERENCE_NAME = "contactsSharedPreference"
 
-@Module(includes = [PreferenceModule::class, ContactsGetterModule::class, DatabaseModule::class])
+@Module(includes = [PreferenceModule::class, ContactsGetterModule::class, DatabaseModule::class, UseCaseModule::class])
 class ProviderModule {
     @Provides
     fun providesSharedPreference(@AppContext context: Context): SharedPreferences =
