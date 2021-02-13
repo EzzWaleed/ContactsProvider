@@ -8,7 +8,7 @@ import io.reactivex.rxjava3.core.BackpressureStrategy
 import io.reactivex.rxjava3.core.Flowable
 import javax.inject.Inject
 
-class AllContactsGetterImpl @Inject constructor(
+internal class AllContactsGetterImpl @Inject constructor(
     private val contentResolver: ContentResolver,
     factory: ContactsSyncPreference.Factory
 ) : ContactsGetter {

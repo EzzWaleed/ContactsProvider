@@ -8,7 +8,7 @@ import com.ezz.contactsprovider.preference.ContactsSyncPreference
 import io.reactivex.rxjava3.core.BackpressureStrategy
 import io.reactivex.rxjava3.core.Flowable
 
-class UpdatedContactsGetterImpl(
+internal class UpdatedContactsGetterImpl(
     private val contentResolver: ContentResolver,
     factory: ContactsSyncPreference.Factory
 ) : ContactsGetter {

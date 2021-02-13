@@ -6,7 +6,7 @@ import io.reactivex.rxjava3.core.Completable
 import io.reactivex.rxjava3.core.Flowable
 
 @Dao
-interface ContactsDao {
+internal interface ContactsDao {
     @Query("SELECT * FROM CONTACT")
     fun getAll(): Flowable<List<Contact>>
 

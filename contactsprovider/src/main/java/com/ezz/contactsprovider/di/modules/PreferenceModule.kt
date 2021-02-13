@@ -10,7 +10,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 
 @Module
-interface PreferenceModule {
+internal interface PreferenceModule {
 
     @Binds
     @IntoMap
@@ -35,6 +35,6 @@ interface PreferenceModule {
     AnnotationTarget.PROPERTY_SETTER
 )
 @MapKey
-annotation class SyncPreferenceKey(val value: ContactsSyncPreference.Type)
+internal annotation class SyncPreferenceKey(val value: ContactsSyncPreference.Type)
 
 

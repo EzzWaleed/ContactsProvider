@@ -7,7 +7,7 @@ import io.reactivex.rxjava3.core.Completable
 import javax.inject.Inject
 import javax.inject.Named
 
-class ForceSyncImpl @Inject constructor(
+internal class ForceSyncImpl @Inject constructor(
     @Named(ContactsGetterModule.ALL_KEY) private val contactsGetter: ContactsGetter,
     private val dao: ContactsDao
 ) : ForceSync {

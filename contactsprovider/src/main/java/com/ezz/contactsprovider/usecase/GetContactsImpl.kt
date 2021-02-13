@@ -7,7 +7,7 @@ import com.ezz.contactsprovider.preference.ContactsSyncPreference
 import io.reactivex.rxjava3.core.Flowable
 import javax.inject.Inject
 
-class GetContactsImpl @Inject constructor(
+internal class GetContactsImpl @Inject constructor(
     factory: ContactsSyncPreference.Factory,
     private val syncUpdates: SyncUpdates,
     private val forceSync: ForceSync,

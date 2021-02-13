@@ -5,7 +5,7 @@ import javax.inject.Inject
 
 private const val TIME_STAMP_KEY = "UpdatedTimeStampKey"
 
-class UpdatedContactsSyncPreferenceImpl @Inject constructor(private val sharedPreferences: SharedPreferences) :
+internal class UpdatedContactsSyncPreferenceImpl @Inject constructor(private val sharedPreferences: SharedPreferences) :
     ContactsSyncPreference {
     override fun getLastSyncTimeStamp(): Long = sharedPreferences.getLong(TIME_STAMP_KEY, 0)
     override fun setHasSynced() =

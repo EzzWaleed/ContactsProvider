@@ -9,7 +9,7 @@ import dagger.Module
 import javax.inject.Named
 
 @Module
-interface ContactsGetterModule {
+internal interface ContactsGetterModule {
 
     @Binds
     @Named(ALL_KEY)

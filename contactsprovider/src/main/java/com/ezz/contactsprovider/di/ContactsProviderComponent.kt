@@ -3,15 +3,13 @@ package com.ezz.contactsprovider.di
 import android.content.Context
 import com.ezz.contactsprovider.ContactsProvider
 import com.ezz.contactsprovider.di.modules.ProviderModule
-import com.ezz.contactsprovider.observer.ContactObserver
-import com.ezz.contactsprovider.usecase.GetContacts
 import dagger.BindsInstance
 import dagger.Component
 import javax.inject.Singleton
 
 @Component(modules = [ProviderModule::class])
 @Singleton
-interface ContactsProviderComponent {
+internal interface ContactsProviderComponent {
 
     fun inject(contactsProvider: ContactsProvider)
 
@@ -24,7 +22,7 @@ interface ContactsProviderComponent {
 
 }
 
-class ComponentWrapper {
+internal class ComponentWrapper {
     companion object {
         private var _component: ContactsProviderComponent? = null
         val instance: ContactsProviderComponent

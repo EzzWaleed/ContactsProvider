@@ -9,7 +9,7 @@ import javax.inject.Inject
 
 private const val TAG = "CONTACT_OBSERVER"
 
-class ContactObserver @Inject constructor(private val syncUpdates: SyncUpdates) :
+internal class ContactObserver @Inject constructor(private val syncUpdates: SyncUpdates) :
     ContentObserver(null) {
     override fun onChange(selfChange: Boolean, uri: Uri?, flags: Int) {
         super.onChange(selfChange, uri, flags)

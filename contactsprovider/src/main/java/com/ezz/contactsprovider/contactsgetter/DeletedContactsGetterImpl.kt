@@ -9,7 +9,7 @@ import io.reactivex.rxjava3.core.BackpressureStrategy
 import io.reactivex.rxjava3.core.Flowable
 import javax.inject.Inject
 
-class DeletedContactsGetterImpl @Inject constructor(
+internal class DeletedContactsGetterImpl @Inject constructor(
     private val contentResolver: ContentResolver,
     factory: ContactsSyncPreference.Factory
 

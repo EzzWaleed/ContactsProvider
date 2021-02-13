@@ -3,7 +3,7 @@ package com.ezz.contactsprovider.preference
 import javax.inject.Inject
 import javax.inject.Provider
 
-interface ContactsSyncPreference {
+internal interface ContactsSyncPreference {
     fun getLastSyncTimeStamp(): Long
     fun setHasSynced()
 
