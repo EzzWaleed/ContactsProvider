@@ -1,4 +1,4 @@
-package com.ezz.contactsprovider.di
+package com.ezz.contactsprovider.di.modules
 
 import com.ezz.contactsprovider.usecase.*
 import dagger.Module

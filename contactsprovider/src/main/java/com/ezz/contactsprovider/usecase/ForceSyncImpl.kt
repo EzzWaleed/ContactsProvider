@@ -2,7 +2,7 @@ package com.ezz.contactsprovider.usecase
 
 import com.ezz.contactsprovider.contactsgetter.ContactsGetter
 import com.ezz.contactsprovider.db.ContactsDao
-import com.ezz.contactsprovider.di.ContactsGetterModule
+import com.ezz.contactsprovider.di.modules.ContactsGetterModule
 import io.reactivex.rxjava3.core.Completable
 import javax.inject.Inject
 import javax.inject.Named

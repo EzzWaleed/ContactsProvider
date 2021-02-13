@@ -23,15 +23,17 @@ class AllContactsGetterImpl @Inject constructor(
             null, null
         )
         cursor.use {
-            if (it != null && it.count > 0) {
-                while (it.moveToNext()) {
-                    emitter.onNext(
-                        Contact(
-                            id = it.getString(it.getColumnIndex(ContactsContract.Contacts._ID)),
-                            name = it.getString(it.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)),
-                            lastUpdateTimeStamp = it.getLong(it.getColumnIndex(ContactsContract.Contacts.CONTACT_LAST_UPDATED_TIMESTAMP))
+            if (it != null) {
+                if (it.count > 0) {
+                    while (it.moveToNext()) {
+                        emitter.onNext(
+                            Contact(
+                                id = it.getString(it.getColumnIndex(ContactsContract.Contacts._ID)),
+                                name = it.getString(it.getColumnIndex(ContactsContract.Contacts.DISPLAY_NAME)),
+                                lastUpdateTimeStamp = it.getLong(it.getColumnIndex(ContactsContract.Contacts.CONTACT_LAST_UPDATED_TIMESTAMP))
+                            )
                         )
-                    )
+                    }
                 }
                 contactsSyncPreference.setHasSynced()
                 emitter.onComplete()

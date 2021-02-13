@@ -1,9 +1,10 @@
-package com.ezz.contactsprovider.di
+package com.ezz.contactsprovider.di.modules
 
 import android.content.ContentResolver
 import android.content.Context
 import android.content.Context.MODE_PRIVATE
 import android.content.SharedPreferences
+import com.ezz.contactsprovider.di.AppContext
 import dagger.Module
 import dagger.Provides
 

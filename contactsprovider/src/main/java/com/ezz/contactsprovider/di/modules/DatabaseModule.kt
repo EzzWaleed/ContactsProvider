@@ -1,9 +1,10 @@
-package com.ezz.contactsprovider.di
+package com.ezz.contactsprovider.di.modules
 
 import android.content.Context
 import androidx.room.Room
 import com.ezz.contactsprovider.db.ContactsDao
 import com.ezz.contactsprovider.db.ContactsProviderDatabase
+import com.ezz.contactsprovider.di.AppContext
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

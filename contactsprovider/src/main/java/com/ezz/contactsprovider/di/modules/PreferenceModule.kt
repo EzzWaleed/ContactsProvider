@@ -1,10 +1,11 @@
-package com.ezz.contactsprovider.di
+package com.ezz.contactsprovider.di.modules
 
 import com.ezz.contactsprovider.preference.AllContactsSyncPreferenceImpl
 import com.ezz.contactsprovider.preference.ContactsSyncPreference
 import com.ezz.contactsprovider.preference.DeletedContactsSyncPreferenceImpl
 import com.ezz.contactsprovider.preference.UpdatedContactsSyncPreferenceImpl
 import dagger.Binds
+import dagger.MapKey
 import dagger.Module
 import dagger.multibindings.IntoMap
 
@@ -27,4 +28,13 @@ interface PreferenceModule {
     fun bindsUpdatedPreference(updatedContactsSyncPreferenceImpl: UpdatedContactsSyncPreferenceImpl): ContactsSyncPreference
 
 }
+
+@Target(
+    AnnotationTarget.FUNCTION,
+    AnnotationTarget.PROPERTY_GETTER,
+    AnnotationTarget.PROPERTY_SETTER
+)
+@MapKey
+annotation class SyncPreferenceKey(val value: ContactsSyncPreference.Type)
+
 
