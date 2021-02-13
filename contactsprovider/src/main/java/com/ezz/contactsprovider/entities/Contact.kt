@@ -1,3 +1,12 @@
 package com.ezz.contactsprovider.entities
 
-data class Contact(val id: String, val name: String, val lastUpdateTimeStamp: Long)
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity
+data class Contact(
+    @PrimaryKey val id: String,
+    @ColumnInfo(name = "name") val name: String,
+    @ColumnInfo(name = "last_updated_time_stamp") val lastUpdateTimeStamp: Long
+)
