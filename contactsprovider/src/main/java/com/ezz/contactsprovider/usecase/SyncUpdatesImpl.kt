@@ -13,9 +13,9 @@ internal class SyncUpdatesImpl @Inject constructor(
     private val contactsDao: ContactsDao
 ) :
     SyncUpdates {
-    override fun invoke(): Completable = deletedContactsGetter.getContacts().flatMapCompletable {
-        contactsDao.delete(it)
-    }.mergeWith(updatedContactsGetter.getContacts().flatMapCompletable {
+    override fun invoke(): Completable = updatedContactsGetter.getContacts().flatMapCompletable {
         contactsDao.insert(it)
+    }.mergeWith(deletedContactsGetter.getContacts().flatMapCompletable {
+        contactsDao.delete(it)
     })
 }
