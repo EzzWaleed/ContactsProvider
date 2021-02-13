@@ -40,9 +40,8 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
-    //Rxjava
-    implementation "io.reactivex.rxjava3:rxjava:3.0.3"
-    implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    //Contacts Provider
+    implementation project(path: ':contactsprovider')
     //Testing
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
