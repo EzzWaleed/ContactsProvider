@@ -43,6 +43,8 @@ dependencies {
     //Rxjava
     implementation "io.reactivex.rxjava3:rxjava:3.0.3"
     implementation 'io.reactivex.rxjava3:rxandroid:3.0.0'
+    //Contacts Provider
+    implementation project(path: ':contactsprovider')
     //Testing
     testImplementation 'junit:junit:4.13.1'
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
